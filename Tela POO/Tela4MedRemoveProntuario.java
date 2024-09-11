@@ -10,7 +10,7 @@ public class Tela4MedRemoveProntuario extends JFrame{
     
     public Tela4MedRemoveProntuario(){
         
-        setTitle("Menu Cadastro");
+        setTitle("Menu Prontuario");
         setSize(380, 225);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
