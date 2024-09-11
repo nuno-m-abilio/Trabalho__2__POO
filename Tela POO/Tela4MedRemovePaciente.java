@@ -12,7 +12,7 @@ public class Tela4MedRemove extends JFrame{
         setTitle("Menu Cadastro");
         setSize(380, 200);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        // setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
         
         JLabel inicio = new javax.swing.JLabel();
