@@ -13,7 +13,7 @@ public class Tela4MedRemoveProntuario extends JFrame{
         setTitle("Menu Prontuario");
         setSize(380, 225);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        // setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
         
         JLabel inicio = new javax.swing.JLabel();
