@@ -1,4 +1,3 @@
-
 package Telas;
 
 import javax.swing.JButton;
@@ -28,22 +27,22 @@ public class Tela4MedRemoveProntuario extends JFrame{
         texto1.setBounds(50, 50, 100, 50);
         add(texto1);
         
-        JTextField caixatexto1 = new javax.swing.JTextField("Ex: 123.456.789.10");
-        caixatexto1.setBounds(120, 65, 180, 20);
-        add(caixatexto1);
+        JTextField cpf = new javax.swing.JTextField("Ex: 123.456.789.10");
+        cpf.setBounds(120, 65, 180, 20);
+        add(cpf);
         
         JLabel texto2 = new javax.swing.JLabel();
         texto2.setText("Protocolo: ");
         texto2.setBounds(50, 80, 100, 50);
         add(texto2);
         
-        JTextField caixatexto2 = new javax.swing.JTextField("Ex: 121212");
-        caixatexto2.setBounds(120, 95, 180, 20);
-        add(caixatexto2);
+        JTextField protocolo = new javax.swing.JTextField("Ex: 121212");
+        protocolo.setBounds(120, 95, 180, 20);
+        add(protocolo);
         
-        JButton bt1 = new javax.swing.JButton("Remover");
-        bt1.setBounds(100, 135, 180, 30);
-        add(bt1);
+        JButton botao1 = new javax.swing.JButton("Remover");
+        botao1.setBounds(100, 135, 180, 30);
+        add(botao1);
         
         setVisible(true);
     }
