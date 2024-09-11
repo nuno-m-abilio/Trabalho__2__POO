@@ -14,7 +14,7 @@ public class Tela4MedCadastro extends JFrame {
         setTitle("Menu Cadastro");
         setSize(380, 400);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        // setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
         
         JLabel inicio = new javax.swing.JLabel();
