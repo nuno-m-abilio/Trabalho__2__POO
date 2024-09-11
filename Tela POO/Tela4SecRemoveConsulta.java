@@ -13,7 +13,7 @@ public class Tela4SecRemoveConsulta extends JFrame{
         setTitle("Menu Consulta");
         setSize(380, 250);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        // setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
         
         JLabel inicio = new javax.swing.JLabel();
