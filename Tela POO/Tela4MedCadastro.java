@@ -75,7 +75,7 @@ public class Tela4MedCadastro extends JFrame {
         caixatexto3.setBounds(120, 222, 180, 20);
         add(caixatexto3);
         
-        JButton bt1 = new javax.swing.JButton("Salvar");
+        JButton bt1 = new javax.swing.JButton("Cadastrar");
         bt1.setBounds(90, 300, 180, 30);
         add(bt1);
         
