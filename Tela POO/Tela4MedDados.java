@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Telas;
 
 import javax.swing.JButton;
@@ -31,9 +28,9 @@ public class Tela4MedCadastro extends JFrame {
         texto1.setBounds(50, 50, 100, 50);
         add(texto1);
         
-        JTextField caixatexto1 = new javax.swing.JTextField("Ex: 123.456.789.10");
-        caixatexto1.setBounds(120, 65, 180, 20);
-        add(caixatexto1);
+        JTextField cpf = new javax.swing.JTextField("Ex: 123.456.789.10");
+        cpf.setBounds(120, 65, 180, 20);
+        add(cpf);
         
         JLabel texto2 = new javax.swing.JLabel();
         texto2.setFont(new java.awt.Font("Tahoma", 1, 14));
@@ -41,43 +38,43 @@ public class Tela4MedCadastro extends JFrame {
         texto2.setBounds(50, 85, 180, 50);
         add(texto2);
         
-        JCheckBox caixa1 = new javax.swing.JCheckBox("Fuma?");
-        caixa1.setBounds(50, 130, 100, 25);
-        add(caixa1);
+        JCheckBox fuma = new javax.swing.JCheckBox("Fuma?");
+        fuma.setBounds(50, 130, 100, 25);
+        add(fuma);
         
-        JCheckBox caixa2 = new javax.swing.JCheckBox("Bebe?");
-        caixa2.setBounds(200, 130, 100, 25);
-        add(caixa2);
+        JCheckBox bebe = new javax.swing.JCheckBox("Bebe?");
+        bebe.setBounds(200, 130, 100, 25);
+        add(bebe);
         
-        JCheckBox caixa3 = new javax.swing.JCheckBox("Alto Colesterol?");
-        caixa3.setBounds(50, 160, 120, 25);
-        add(caixa3);
+        JCheckBox colesterol = new javax.swing.JCheckBox("Alto Colesterol?");
+        colesterol.setBounds(50, 160, 120, 25);
+        add(colesterol);
         
-        JCheckBox caixa4 = new javax.swing.JCheckBox("Diabetes?");
-        caixa4.setBounds(200, 160, 100, 25);
-        add(caixa4);
+        JCheckBox diabetes = new javax.swing.JCheckBox("Diabetes?");
+        diabetes.setBounds(200, 160, 100, 25);
+        add(diabetes);
         
         JLabel texto3 = new javax.swing.JLabel();
         texto3.setText("Cirurgias: ");
         texto3.setBounds(50, 190, 100, 25);
         add(texto3);
         
-        JTextField caixatexto2 = new javax.swing.JTextField("Ex: Torácica");
-        caixatexto2.setBounds(120, 192, 180, 20);
-        add(caixatexto2);
+        JTextField cirurgias = new javax.swing.JTextField("Ex: Torácica");
+        cirurgias.setBounds(120, 192, 180, 20);
+        add(cirurgias);
         
         JLabel texto4 = new javax.swing.JLabel();
         texto4.setText("Alergias: ");
         texto4.setBounds(50, 220, 100, 25);
         add(texto4);
         
-        JTextField caixatexto3 = new javax.swing.JTextField("Ex: Dipirona");
-        caixatexto3.setBounds(120, 222, 180, 20);
-        add(caixatexto3);
+        JTextField alergias = new javax.swing.JTextField("Ex: Dipirona");
+        alergias.setBounds(120, 222, 180, 20);
+        add(alergias);
         
-        JButton bt1 = new javax.swing.JButton("Salvar");
-        bt1.setBounds(90, 300, 180, 30);
-        add(bt1);
+        JButton botao1 = new javax.swing.JButton("Cadastrar");
+        botao1.setBounds(90, 300, 180, 30);
+        add(botao1);
         
         setVisible(true);
     }
