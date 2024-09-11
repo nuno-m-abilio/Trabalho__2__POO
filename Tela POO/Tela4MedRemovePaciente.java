@@ -6,9 +6,9 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class Tela4MedRemove extends JFrame{
+public class Tela4MedRemovePaciente extends JFrame{
     
-    public Tela4MedRemove(){
+    public Tela4MedRemovePaciente(){
         setTitle("Menu Cadastro");
         setSize(380, 200);
         setLocationRelativeTo(null);
