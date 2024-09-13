@@ -89,6 +89,10 @@ public class Tela4MedCadastro extends JFrame {
         JButton botao1 = new javax.swing.JButton("Cadastrar");
         botao1.setBounds(200, 300, 100, 20);
         add(botao1);
+
+        /*
+        * BOTÃO DE VOLTAR.
+        */ 
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -96,6 +100,12 @@ public class Tela4MedCadastro extends JFrame {
              dispose();
             }
         });
+
+        /*
+        * BOTÃO QUE GERA UM HISTORICO COM BASE NAS INFORMAÇÕES INSERIDAS NAS 
+        * CAIXAS DE TEXTO DA INTERFACE, UTILIZANDO O CPF PARA CADASTRAR UMA PESSOA
+        * ESPECIFICA
+        */
         
         botao1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
