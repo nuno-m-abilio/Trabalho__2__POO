@@ -67,6 +67,10 @@ public class Tela4MedReceita extends JFrame {
         JButton voltar = new javax.swing.JButton("Voltar");
         voltar.setBounds(20, 150, 200, 20);
         add(voltar);
+
+        /*
+        * BOTÃO DE VOLTAR.
+        */ 
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -74,6 +78,11 @@ public class Tela4MedReceita extends JFrame {
             dispose();
             }
         });
+
+        /*
+        * BOTÃO QUE GERA UMA RECEITA MÉDICA, COM BASE NO NOME DO PACIENTE, NOME
+        * DO REMÉDIO E AS DOSES DIARIAS.
+        */
         
         botao1.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e) {
