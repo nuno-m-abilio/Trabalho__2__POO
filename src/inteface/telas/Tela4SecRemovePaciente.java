@@ -48,6 +48,9 @@ public class Tela4SecRemovePaciente extends JFrame{
         voltar.setBounds(70, 110, 120, 30);
         add(voltar);
         
+        /*
+        * BOTÃO DE VOLTAR.
+        */  
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -56,7 +59,9 @@ public class Tela4SecRemovePaciente extends JFrame{
             }
         });
         
-        
+        /*
+        * BOTÃO QUE REMOVE PACIENTES, BUSCANDO O PACIENTE A SER REMOVIDO PELO CPF
+        */
         
         botao1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
