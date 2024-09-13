@@ -1,8 +1,6 @@
 package inteface.telas;
 
 import AcessoMedico.Medico;
-import AcessoSecretaria.Secretaria;
-import Registros.Registros;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.persistence.EntityManagerFactory;
@@ -145,9 +143,8 @@ public class Tela4MedAtualizaDados extends JFrame {
                 }
                 String cirurgias1 = cirurgias.getText();
                 String alergias1 = alergias.getText();
-                // Sem registro
                 
-                
+
 
                 med.atualizaHistorico(cpf1, fuma1, bebe1, colesterol1, diabetes1, doencaCardiaca1, cirurgias1, alergias1, emf);
             }

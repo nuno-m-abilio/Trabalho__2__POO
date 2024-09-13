@@ -6,7 +6,6 @@ package inteface.telas;
 
 import AcessoMedico.Medico;
 import AcessoSecretaria.Secretaria;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.persistence.EntityManagerFactory;
@@ -52,7 +51,9 @@ public class Tela2Med extends JFrame {
         voltar.setBounds(20, 290, 80, 20);
         add(voltar);
         
-       
+       /*
+        *  BOTAO DE VOLTAR
+        */
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -62,7 +63,9 @@ public class Tela2Med extends JFrame {
         });
         
 
-      
+        /*
+        *  BOTAO QUE ABRE A TELA GERENCIADOR DE DADOS
+        */
         
         botao1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -74,6 +77,12 @@ public class Tela2Med extends JFrame {
 
             }
         });
+        
+        
+       /*
+        *  BOTAO QUE ABRE A TELA GERENCIADOR DO PRONTUARIO
+        */
+       
         botao2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             Tela3MedProntuario telaMedPront = new Tela3MedProntuario(Tela2Med.this, Emf, Med);
@@ -84,6 +93,11 @@ public class Tela2Med extends JFrame {
             
             }
         });
+        
+        /*
+        *  BOTAO QUE ABRE A TELA MENU RELATORIO
+        */
+        
         botao3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             Tela3MedRelatorio telaMedRelato= new Tela3MedRelatorio(Tela2Med.this, Emf, Med);

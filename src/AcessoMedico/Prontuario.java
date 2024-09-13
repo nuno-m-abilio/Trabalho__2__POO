@@ -14,8 +14,10 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
- *
- * @author 55449
+ * Prontuario é uma classe que representa as informações que o médico registra sobre o paciente no contexto de uma
+ * consulta, como as Strings sintomas, diagnóstico, prescrição de tratamentos e a própria identificação como médico.
+ * Além disso, há um atributo paciente que conecta-se diretamente com um paciente do banco de dados a partir da
+ * anotação @OneToOne com cascade. Os métodos são apensas contrutores, sets e gets (a classe é um POJO). 
  */
 @Entity
 @Table(name = "PRONTUARIO")

@@ -12,11 +12,16 @@ import javax.persistence.OneToOne;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
-/**
- *
- * @author 55449
- */
 
+/**
+ * Paciente é uma classe que representa as ifnormações de uma paciente da clínica. Há várias Strings representando
+ * informações pessoais como nome, cpf, data de nascimento, endereço, celular, email e tipo do convenio, além de um
+ * objeto da classe Historico que somente o  médico pode acessar. A persistência dados é feita sem muitos detalhes
+ * extras e os seus métodos são apensas contrutores, sets e gets (ele é um POJO). Um detalhe importante é a anotação
+ * @OneToOne com cascade usada no atributo historico, que conecta diretamente essas duas classes - Quando uma é
+ * alterada, a outra também é. Outro detalhe é que a manipulação dos dados gerais do paciente são feitos pela
+ * secretária, mas o Historico é feito somente pelo Medico.
+ */
 @Entity
 @Table(name = "PACIENTE")
 public class Paciente {

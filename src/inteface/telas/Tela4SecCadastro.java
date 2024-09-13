@@ -1,6 +1,5 @@
 package inteface.telas;
 
-import AcessoMedico.Medico;
 import AcessoSecretaria.Secretaria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -109,9 +108,9 @@ public class Tela4SecCadastro extends JFrame {
         voltar.setBounds(60, 260, 100, 30);
         add(voltar);
         
-        /*
+       /*
         * BOTÃO DE VOLTAR.
-        */  
+        */ 
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -119,11 +118,7 @@ public class Tela4SecCadastro extends JFrame {
             dispose();
             }
         });
-
-        /*
-        * BOTÃO QUE REALIZA O CADASTRO DE PACIENTES, ADICIONANDO OS DADOS INSERIDOS
-        * NAS CAIXAS DE TEXTOS DA INTERFACE E ENVIANDO PARA O BANCO DE DADOS.
-        */
+        
         
         botao1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {

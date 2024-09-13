@@ -1,7 +1,6 @@
 package inteface.telas;
 
 import AcessoMedico.Medico;
-import AcessoSecretaria.Secretaria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.persistence.EntityManagerFactory;
@@ -46,13 +45,9 @@ public class Tela4MedDeclaracao  extends JFrame {
         voltar.setBounds(30, 125, 200, 20);
         add(voltar);
 
-        JButton botao1 = new JButton("Gerar");
+        JButton botao1 = new JButton("Imprimir");
         botao1.setBounds(250, 125, 200, 20);
         add(botao1);
-
-        /*
-        * BOTÃO DE VOLTAR.
-        */ 
 
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -61,11 +56,6 @@ public class Tela4MedDeclaracao  extends JFrame {
             }
         });
 
-        /*
-        * BOTÃO QUE GERA UMA DECLARAÇÃO DE ACOMPANHANTE, COM BASE NO NOME DO
-        * PACIENTE E NO NOME DO ACOMPANHANTE
-        */
-        
         botao1.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e) {
                 String nome1 = nome.getText();

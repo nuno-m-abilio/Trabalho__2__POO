@@ -7,7 +7,6 @@ package inteface.telas;
 
 
 import AcessoMedico.Medico;
-import AcessoSecretaria.Secretaria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.persistence.EntityManagerFactory;
@@ -60,17 +59,13 @@ public class Tela4MedReceita extends JFrame {
         doses.setBounds(150, 120, 300, 20);
         add(doses);
         
-        JButton botao1 = new JButton("Gerar");
+        JButton botao1 = new JButton("Imprimir");
         botao1.setBounds(250, 150, 200, 20);
         add(botao1);
         
         JButton voltar = new javax.swing.JButton("Voltar");
         voltar.setBounds(20, 150, 200, 20);
         add(voltar);
-
-        /*
-        * BOTÃO DE VOLTAR.
-        */ 
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -78,11 +73,6 @@ public class Tela4MedReceita extends JFrame {
             dispose();
             }
         });
-
-        /*
-        * BOTÃO QUE GERA UMA RECEITA MÉDICA, COM BASE NO NOME DO PACIENTE, NOME
-        * DO REMÉDIO E AS DOSES DIARIAS.
-        */
         
         botao1.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e) {

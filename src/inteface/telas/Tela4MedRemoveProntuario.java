@@ -1,7 +1,6 @@
 package inteface.telas;
 
 import AcessoMedico.*;
-import AcessoSecretaria.Secretaria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.persistence.EntityManagerFactory;
@@ -53,10 +52,7 @@ public class Tela4MedRemoveProntuario extends JFrame{
         JButton voltar = new javax.swing.JButton("Voltar");
         voltar.setBounds(60, 135, 130, 30);
         add(voltar);
-
-        /*
-        * BOTÃO DE VOLTAR.
-        */ 
+        
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -64,11 +60,6 @@ public class Tela4MedRemoveProntuario extends JFrame{
             dispose();
             }
         });
-
-        /*
-        * BOTÃO QUE REMOVE PRONTUARIOS, UTILIZANDO O CPF DO PACIENTE E O
-        * PROTOCOLO PARA REMOVER UM PRONTUARIO ESPECIFICO
-        */
         
         botao1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {

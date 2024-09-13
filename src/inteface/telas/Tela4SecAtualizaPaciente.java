@@ -1,6 +1,6 @@
 package inteface.telas;
 
-import AcessoMedico.Medico;
+
 import AcessoSecretaria.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+
 
 public class Tela4SecAtualizaPaciente extends JFrame{
     
@@ -113,14 +113,16 @@ public class Tela4SecAtualizaPaciente extends JFrame{
         JButton botao1 = new JButton("Enviar");
         botao1.setBounds(190, 300, 100, 30 );
         add(botao1);
+          
         
         JButton voltar = new javax.swing.JButton("Voltar");
         voltar.setBounds(60, 300, 100, 30);
         add(voltar);
-
-        /*
+        
+       /*
         * BOTÃO DE VOLTAR.
         */ 
+        
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -128,8 +130,9 @@ public class Tela4SecAtualizaPaciente extends JFrame{
             dispose();
             }
         });
-
-        /*
+        
+        
+       /*
         * BOTÃO QUE ATUALIZA AS INFOMAÇÕES DO PACIENTE, UTILIZANDO O CPF
         * PARA BUSCAR O PACIENTE ESPECIFICO.
         */

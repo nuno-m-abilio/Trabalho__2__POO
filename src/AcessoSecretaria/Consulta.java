@@ -13,9 +13,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 /**
- *
- * @author 55449
+ * A classe consulta representa os dados de uma consulta médica, estando conectados diretamente com um objeto paciente pela
+ * anotação @OneToOne com cascade. Além disso, aoutras informaçõs importantes como data, hora, médico que vai atende e o 
+ * tipo de convênio são armazenadas por Stirngs. Aqui Os métodos são apensas contrutores, sets e gets (a classe é um POJO).
  */
 @Entity
 @Table(name = "CONSULTA")

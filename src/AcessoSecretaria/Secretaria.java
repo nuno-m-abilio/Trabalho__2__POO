@@ -10,14 +10,17 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
 import javax.persistence.Query;
+
 /**
- *
- * @author 55449
+ * Secretaria é uma classe sem atributos utilizada para realizar a manipulação dos dados dos Pacientes e das
+ * e das Consultas, mudando diretamente o banco de dados. Além disso, ele também gera um relatório com todas
+ * as consultas de um dia e seus respctivos pacientes.
  */
 public class Secretaria {
     
     public static void Secretaria(){}
     
+    // CRIA E INSERE PACIENTE NO BANCO DE DADOS
     public void cadastrarPaciente(String nome, String cpf, String dataNascimento, String endereco, String celular, String email, String tipoConvenio, EntityManagerFactory emf){
         Paciente paciente = new Paciente(nome, cpf, dataNascimento, endereco, celular, email, tipoConvenio);
         EntityManager em = emf.createEntityManager();
@@ -27,6 +30,7 @@ public class Secretaria {
         em.close();
     }
     
+    //CRIA E INSERE CONSULTA NO BANCO DE DADOS
     public boolean cadastrarConsulta(String data, String horario, String medico, String cpfPaciente, String tipo, EntityManagerFactory emf){
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -46,6 +50,7 @@ public class Secretaria {
         }
     }
     
+    // ATUALIZA PACIENTE NO BANCO DE DADOS
     public boolean atualizarPaciente(String cpfAntigo, String nome, String cpf, String dataNascimento, String endereco, String celular, String email, String tipoConvenio, EntityManagerFactory emf){
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -71,6 +76,7 @@ public class Secretaria {
         }
     }
     
+    // ATUALIZA CONSULTA NO BANCO DE DADOS
     public boolean atualizarConsulta(String antigoCpfPaciente, String antigaData, String antigoHorario, String data, String horario, String medico, String cpfPaciente, String tipo, EntityManagerFactory emf){
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -101,6 +107,7 @@ public class Secretaria {
         }
     }
     
+    // REMOVE PACIENTE DO BANCO DE DADOS
     public boolean removerPaciente(String cpfPaciente, EntityManagerFactory emf){
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -118,7 +125,7 @@ public class Secretaria {
             return false;
         }
     }
-    
+     // REMOVE CONSULTA DO BANCO DE DADOS
     public boolean removerConsulta(String antigoCpfPaciente, String antigaData, String antigaHora, EntityManagerFactory emf){
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -138,47 +145,8 @@ public class Secretaria {
             return false;
         }
     }
-    
-    public boolean imprimePaciente(String cpfPaciente, EntityManagerFactory emf){
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
-        Query query = em.createQuery("select p FROM Paciente p WHERE p.cpf LIKE :cpf");
-        query.setParameter("cpf", cpfPaciente);
-        List<Paciente> pacientesEncontrados = query.getResultList();
-        if (!pacientesEncontrados.isEmpty()){
-            Paciente pa = pacientesEncontrados.get(0);
-            System.out.println(pa.getNome() + pa.getCpf() + pa.getCelular() + pa.getDataNascimento());
-            em.getTransaction().commit();
-            em.close();
-            return true;
-        }else{
-            em.getTransaction().commit();
-            em.close();
-            return false;
-        }
-    }
-    
-     public boolean imprimeConsulta(String antigoCpfPaciente, String antigaData, String antigaHora, EntityManagerFactory emf){
-        EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
-        Query query = em.createQuery("select c FROM Consulta c WHERE c.paciente.cpf LIKE :cpf AND c.dataa LIKE :data AND c.horario LIKE :horario");
-        query.setParameter("cpf", antigoCpfPaciente);
-        query.setParameter("data", antigaData);
-        query.setParameter("horario", antigaHora);
-        List<Consulta> consultasEncontradas = query.getResultList();
-        if (!consultasEncontradas.isEmpty()){
-            Consulta co = consultasEncontradas.get(0);
-            System.out.println(co.getData() + co.getHorario() + co.getMedico() + co.getPaciente().getNome());
-            em.getTransaction().commit();
-            em.close();
-            return true;
-       }else{
-            em.getTransaction().commit();
-            em.close();
-            return false;
-        }
-    }
             
+    // Função que toma como entrada uma data e retorna todas as consultas neste dia  
     public void relatorioConsultas(String data, EntityManagerFactory emf){
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();

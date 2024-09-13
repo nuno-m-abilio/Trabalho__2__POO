@@ -4,7 +4,7 @@
  */
 package inteface.telas;
 
-import AcessoMedico.Medico;
+
 import AcessoSecretaria.Secretaria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

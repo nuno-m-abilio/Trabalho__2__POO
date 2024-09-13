@@ -48,6 +48,9 @@ public class Tela2GerenciadorMensagem  extends JFrame {
         voltar.setBounds(50, 130, 400, 20);
         add(voltar);
         
+        /*
+        *  BOTAO DE VOLTAR
+        */
 
         
         voltar.addActionListener(new ActionListener() {
@@ -57,6 +60,11 @@ public class Tela2GerenciadorMensagem  extends JFrame {
             }
         });
         
+        
+        /*
+        *  BOTAO QUE EXECUTA DE FUNÇAO ENVIAR MENSAGEM
+        */
+
         
         MensageiroEmail mensageiroE = new MensageiroEmail();
         MensageiroSMS mensageiroS = new MensageiroSMS();
@@ -72,7 +80,7 @@ public class Tela2GerenciadorMensagem  extends JFrame {
         
        
 
-      //  setVisible(true);
+  
         
         
     }

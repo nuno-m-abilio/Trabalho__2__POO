@@ -5,7 +5,6 @@
 package inteface.telas;
 
 import AcessoMedico.Medico;
-import AcessoSecretaria.Secretaria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.persistence.EntityManagerFactory;
@@ -55,14 +54,16 @@ public class Tela3MedRelatorio extends JFrame{
         botao4.setBounds(40, 230, 200, 40);
         add(botao4);
         
-        
-        //setVisible(true);
+
         
         JButton voltar = new javax.swing.JButton("Voltar");
         voltar.setBounds(20, 290, 80, 20);
         add(voltar);
         
        
+       /*
+        *  BOTAO DE VOLTAR
+        */
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -71,35 +72,53 @@ public class Tela3MedRelatorio extends JFrame{
             }
         });
         
-  
+       /*
+        *  BOTAO QUE ABRE A TELA DE GERAR RECEITA
+        */
         
         botao1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             Tela4MedReceita medReceita = new Tela4MedReceita(Tela3MedRelatorio.this, Emf, Med);
             medReceita.setVisible(true);
             medReceita.setResizable(false);
-            //dispose();
+            setVisible(false);
+           
             }
         });
+        
+       /*
+        *  BOTAO QUE ABRE A TELA DE GERAR ATESTADO
+        */
+       
         botao2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             Tela4MedAtestado medAtestado = new Tela4MedAtestado(Tela3MedRelatorio.this, Emf, Med);
             medAtestado.setVisible(true);
             medAtestado.setResizable(false);
             setVisible(false);
-            //dispose();
+            
             }
         });
+        
+       /*
+        *  BOTAO QUE ABRE A TELA DE GERAR DECLARAÇÃO
+        */
+       
+        
         botao3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             Tela4MedDeclaracao medDeclaracao = new Tela4MedDeclaracao(Tela3MedRelatorio.this,Emf, Med);
             medDeclaracao.setVisible(true);
             medDeclaracao.setResizable(false);
             setVisible(false);
-           // dispose();
+           
             }
         });
-
+        
+       /*
+        *  BOTAO QUE MOSTRA POP DA QUANTIDADE DE CLIENTES 
+        */
+        
           botao4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             long tamanho; 
@@ -107,6 +126,7 @@ public class Tela3MedRelatorio extends JFrame{
                 
             Tela4MedTotalPacientes medTotal = new Tela4MedTotalPacientes(tamanho);
             medTotal.setVisible(true);
+            
             
             }
         });

@@ -52,6 +52,9 @@ public class Tela1 extends JFrame {
         
         setVisible(true);
 
+       /*
+        *  BOTAO QUE ABRE A MENU MÉDICO
+        */
         
         botao1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -62,6 +65,11 @@ public class Tela1 extends JFrame {
 
             }
         });
+        
+        /*
+        *  BOTAO QUE ABRE A MENU SECRETARIA
+        */
+
         botao2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             Tela2Sec telaSec = new Tela2Sec(Tela1.this, Emf, Sec);
@@ -71,6 +79,12 @@ public class Tela1 extends JFrame {
           
             }
         });
+        
+        /*
+        *  BOTAO QUE ABRE A GERENCIADOR DE MENSAGEM
+        */
+
+        
         botao3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             Tela2GerenciadorMensagem gerenciadorMensagem = new Tela2GerenciadorMensagem(Tela1.this, Emf);

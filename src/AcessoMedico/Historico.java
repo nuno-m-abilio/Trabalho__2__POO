@@ -10,9 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
+
 /**
- *
- * @author 55449
+* Classe que representa o Historico de um Paciente, com informações sobre sua saíde - se fuma, bebe, tem problema
+* de colesterol, diabetes, doenças cardíacas (todos booleans), alergias e cirurgias (Strings). A persistência de
+* dados é feita sem muitos detalhes extras e os seus métodos são apensas contrutores, sets e gets (ele é um POJO).
+* Um detalhe importante, porém, é que está diretamente conectado com um paciente, sendo criado/atualizado/remove
+* a partir dos dados do paciente.
  */
 @Entity
 @Table(name = "HISTORICO")

@@ -1,6 +1,5 @@
 package inteface.telas;
 
-import AcessoMedico.Medico;
 import AcessoSecretaria.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -39,19 +38,15 @@ public class Tela4SecRemovePaciente extends JFrame{
         botao1.setBounds(200, 110, 120, 30);
         add(botao1);
         
-        
-        
-        
-        
                 
         JButton voltar = new javax.swing.JButton("Voltar");
         voltar.setBounds(70, 110, 120, 30);
         add(voltar);
         
-        /*
+       /*
         * BOTÃO DE VOLTAR.
         */  
-        
+       
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             telaAnterior.setVisible(true);
@@ -59,9 +54,11 @@ public class Tela4SecRemovePaciente extends JFrame{
             }
         });
         
-        /*
+       /*
         * BOTÃO QUE REMOVE PACIENTES, BUSCANDO O PACIENTE A SER REMOVIDO PELO CPF
         */
+        
+        
         
         botao1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {

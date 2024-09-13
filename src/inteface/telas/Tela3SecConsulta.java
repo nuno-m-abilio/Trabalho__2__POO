@@ -4,9 +4,8 @@
  */
 package inteface.telas;
 
-import AcessoMedico.Medico;
+
 import AcessoSecretaria.Secretaria;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.persistence.EntityManagerFactory;
@@ -55,22 +54,29 @@ public class Tela3SecConsulta extends JFrame{
         botao3.setBounds(40, 210, 200, 60);
         add(botao3);
         
-        //setVisible(true);
         
         
         JButton voltar = new javax.swing.JButton("Voltar");
         voltar.setBounds(20, 290, 80, 20);
         add(voltar);
         
+        
+       /*
+        *  BOTAO DE VOLTAR
+        */       
        
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             telaAnterior.setVisible(true);
-        //   dispose();
+            dispose();
             }
         });
        
+        
+       /*
+        *  BOTAO QUE ABRE TELA DE CADASTRO CONSULTA
+        */
         
         botao1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -78,25 +84,35 @@ public class Tela3SecConsulta extends JFrame{
             secCadastroConsulta.setVisible(true);
             secCadastroConsulta.setResizable(false);
             setVisible(false);
-        //    dispose();
+      
             }
         });
+        
+       /*
+        *  BOTAO QUE ABRE TELA DE ATUALIZA CONSULTA 
+        */
+       
         botao2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             Tela5SecAtualizaConsulta secAtualizaConsulta = new Tela5SecAtualizaConsulta(Tela3SecConsulta.this,Emf, Sec);
             secAtualizaConsulta.setVisible(true);
             secAtualizaConsulta.setResizable(false);
             setVisible(false);
-         //   dispose();
+      
             }
         });
+        
+       /*
+        *  BOTAO QUE ABRE TELA DE REMOVE CONSULTA 
+        */
+        
         botao3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             Tela4SecRemoveConsulta secRemoveConsul = new Tela4SecRemoveConsulta(Tela3SecConsulta.this,Emf, Sec);
             secRemoveConsul.setVisible(true);
             secRemoveConsul.setResizable(false);
             setVisible(false);
-        //    dispose();
+        
             }
         });
     }

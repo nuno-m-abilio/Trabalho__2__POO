@@ -1,7 +1,6 @@
 package inteface.telas;
 
 import AcessoMedico.Medico;
-import AcessoSecretaria.Secretaria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.persistence.EntityManagerFactory;
@@ -94,7 +93,10 @@ public class Tela4MedAtualizaProntua extends JFrame{
         voltar.setBounds(60, 310, 120, 30);
         add(voltar);
 
-
+       /*
+        *  BOTAO DE VOLTAR
+        */ 
+        
 
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -102,6 +104,11 @@ public class Tela4MedAtualizaProntua extends JFrame{
             dispose();
             }
         });
+        
+       /*
+        *  BOTAO QUE ATUALIZA PRONTUARIO
+        */ 
+        
         
         botao1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {

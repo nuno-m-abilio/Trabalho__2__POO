@@ -5,8 +5,6 @@
 package inteface.telas;
 
 import AcessoMedico.Medico;
-import AcessoSecretaria.Secretaria;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.persistence.EntityManagerFactory;
@@ -59,8 +57,10 @@ public class Tela3MedDados extends JFrame {
         voltar.setBounds(20, 290, 80, 20);
         add(voltar);
         
+       /*
+        * BOTÃO DE VOLTAR.
+        */
        
-        
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             telaAnterior.setVisible(true);
@@ -69,7 +69,9 @@ public class Tela3MedDados extends JFrame {
             }
         });
         
-
+        /*
+        *  BOTAO QUE ABRE A TELA CADASTRO DADOS
+        */
        
         botao1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -77,26 +79,36 @@ public class Tela3MedDados extends JFrame {
             medDados.setVisible(true);
             medDados.setResizable(false);
             setVisible(false);
-           // dispose();
+         
             
             }
         });
+        
+        /*
+        *  BOTAO QUE ABRE A TELA ATUALIZA DADOS
+        */
+        
         botao2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             Tela4MedAtualizaDados medAtualizaDados = new Tela4MedAtualizaDados(Tela3MedDados.this, Emf, Med);
             medAtualizaDados.setVisible(true);
             medAtualizaDados.setResizable(false);
             setVisible(false);
-           // dispose();
+           
             }
         });
+        
+        /*
+        *  BOTAO QUE ABRE A TELA REMOVE DADOS
+        */
+        
         botao3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             Tela4MedRemovePaciente medRemovePaciente = new Tela4MedRemovePaciente(Tela3MedDados.this, Emf, Med);
             medRemovePaciente.setVisible(true);
             medRemovePaciente.setResizable(false);
             setVisible(false);
-          //  dispose();
+         
             }
         });
             

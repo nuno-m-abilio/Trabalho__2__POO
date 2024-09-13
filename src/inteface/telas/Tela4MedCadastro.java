@@ -1,9 +1,8 @@
 
 package inteface.telas;
 
-import Registros.*;
+
 import AcessoMedico.*;
-import AcessoSecretaria.Secretaria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.persistence.EntityManagerFactory;
@@ -89,10 +88,6 @@ public class Tela4MedCadastro extends JFrame {
         JButton botao1 = new javax.swing.JButton("Cadastrar");
         botao1.setBounds(200, 300, 100, 20);
         add(botao1);
-
-        /*
-        * BOTÃO DE VOLTAR.
-        */ 
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -100,12 +95,6 @@ public class Tela4MedCadastro extends JFrame {
              dispose();
             }
         });
-
-        /*
-        * BOTÃO QUE GERA UM HISTORICO COM BASE NAS INFORMAÇÕES INSERIDAS NAS 
-        * CAIXAS DE TEXTO DA INTERFACE, UTILIZANDO O CPF PARA CADASTRAR UMA PESSOA
-        * ESPECIFICA
-        */
         
         botao1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
@@ -147,14 +136,8 @@ public class Tela4MedCadastro extends JFrame {
                 }
                 String cirurgias1 = cirurgias.getText();
                 String alergias1 = alergias.getText();
-                // Sem registro
-                System.out.println(cpf1);
-                System.out.println(fuma1);
-                System.out.println(bebe1);
-                System.out.println(colesterol1);
-               
-                
-                
+
+                               
                 med.insereHistorico( cpf1, fuma1, bebe1, colesterol1, diabetes1, doencaCardiaca1, cirurgias1, alergias1, emf);
             }
         });

@@ -1,7 +1,6 @@
 package inteface.telas;
 
 import AcessoMedico.*;
-import AcessoSecretaria.Secretaria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.persistence.EntityManagerFactory;
@@ -98,7 +97,7 @@ public class Tela4MedProntua extends JFrame {
         voltar.setBounds(60, 310, 120, 30);
         add(voltar);
 
-        /*
+       /*
         * BOTÃO DE VOLTAR.
         */ 
 
@@ -108,8 +107,8 @@ public class Tela4MedProntua extends JFrame {
             dispose();
             }
         });
-
-        /*
+        
+       /*
         * BOTÃO QUE GERA UM PRONTUARIO, COM BASE NOS DADOS INSERIDOS NAS CAIXAS
         * DE TEXTOS DA INTERFACE, UTILIZANDO O CPF PARA BUSCAR O PACIENTE 
         * ESPECIFICO 

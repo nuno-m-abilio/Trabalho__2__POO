@@ -4,9 +4,8 @@
  */
 package inteface.telas;
 
-import AcessoMedico.Medico;
+
 import AcessoSecretaria.Secretaria;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.persistence.EntityManagerFactory;
@@ -56,7 +55,9 @@ public class Tela2Sec extends JFrame{
         voltar.setBounds(20, 290, 80, 20);
         add(voltar);
         
-       
+        /*
+        *  BOTAO DE VOLTAR
+        */
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -65,6 +66,9 @@ public class Tela2Sec extends JFrame{
             }
         });
         
+       /*
+        *  BOTAO QUE ABRE A TELA GERENCIADOR DE PACIENTE
+        */
         
         botao1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -72,26 +76,37 @@ public class Tela2Sec extends JFrame{
             telamedDados.setVisible(true);
             telamedDados.setResizable(false);
             setVisible(false);
-          //  dispose();
+         
             
             }
         });
+        
+       /*
+        *  BOTAO QUE ABRE A TELA GERENCIADOR DE CONSULTA
+        */
+        
         botao2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             Tela3SecConsulta telaSecConsu = new Tela3SecConsulta(Tela2Sec.this,Emf, Sec);
             telaSecConsu.setVisible(true);
             telaSecConsu.setResizable(false);
             setVisible(false);
-         //   dispose();
+        
             }
         });
+        
+       /*
+        *  BOTAO QUE ABRE A TELA GERENCIADOR DAS CONSULTAS 
+        */
+        
+        
         botao3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             Tela3SecRelato telaSedRelato= new Tela3SecRelato(Tela2Sec.this,Emf, Sec);
             telaSedRelato.setVisible(true);
             telaSedRelato.setResizable(false);
             setVisible(false);
-         //   dispose();
+        
             }
         });
     }

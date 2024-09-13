@@ -6,7 +6,6 @@ package inteface.telas;
 
 
 import AcessoMedico.Medico;
-import AcessoSecretaria.Secretaria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.persistence.EntityManagerFactory;
@@ -60,14 +59,20 @@ public class Tela3MedProntuario extends JFrame{
         voltar.setBounds(20, 290, 80, 20);
         add(voltar);
         
-
+       /*
+        * BOTÃO DE VOLTAR.
+        */
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             telaAnterior.setVisible(true);
-         //   dispose();
+            dispose();
             }
         });
+        
+       /*
+        *  BOTAO QUE ABRE A TELA CADASTRO PRONTUARIO
+        */
         
         botao1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -75,26 +80,37 @@ public class Tela3MedProntuario extends JFrame{
             medProntuario.setVisible(true);
             medProntuario.setResizable(false);
             setVisible(false);
-          //  dispose();
+          
             
             }
         });
+        
+       /*
+        *  BOTAO QUE ABRE A TELA ATUALIZA PRONTUARIO
+        */
+        
+        
         botao2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             Tela4MedAtualizaProntua medProntuarioAtualiza = new Tela4MedAtualizaProntua(Tela3MedProntuario.this, Emf, Med);
             medProntuarioAtualiza.setVisible(true);
             medProntuarioAtualiza.setResizable(false);
             setVisible(false);
-           // dispose();
+           
             }
         });
+        
+       /*
+        *  BOTAO QUE ABRE A TELA REMOVE PRONTUARIO
+        */
+        
         botao3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             Tela4MedRemoveProntuario medProntuarioRemove = new Tela4MedRemoveProntuario(Tela3MedProntuario.this, Emf, Med);
             medProntuarioRemove.setVisible(true);
             medProntuarioRemove.setResizable(false);
             setVisible(false);
-           // dispose();
+           
             }
         });
        

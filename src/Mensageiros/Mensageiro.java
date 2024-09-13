@@ -4,6 +4,10 @@
  */
 package Mensageiros;
 
+/**
+* Classe mãe que, tendo como objetivo avisar os pacientes da consulta de um determinado dia, tem como herdeiros uma versão
+* para mandar e-mail e uma para mandaar SMS. Não há atributos, apenas a função de fazer a comunicação.
+*/
 public class Mensageiro {
 
     public void Mensageiro(){}

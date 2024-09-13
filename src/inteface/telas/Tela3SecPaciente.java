@@ -4,9 +4,8 @@
  */
 package inteface.telas;
 
-import AcessoMedico.Medico;
+
 import AcessoSecretaria.Secretaria;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.persistence.EntityManagerFactory;
@@ -60,6 +59,9 @@ public class Tela3SecPaciente extends JFrame {
         add(voltar);
         
        
+       /*
+        *  BOTAO DE VOLTAR
+        */  
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -68,6 +70,9 @@ public class Tela3SecPaciente extends JFrame {
             }
         });
         
+       /*
+        *  BOTAO QUE ABRE TELA DE CADASTRO DO PACIENTE 
+        */
         
         botao1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -75,26 +80,37 @@ public class Tela3SecPaciente extends JFrame {
             secCadastro.setVisible(true);
             secCadastro.setResizable(false);
             setVisible(false);
-        //    dispose();
+        
             
             }
         });
+        
+       /*
+        *  BOTAO QUE ABRE TELA DE ATUALIZA DO PACIENTE
+        */ 
+       
         botao2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             Tela4SecAtualizaPaciente secAtualizaPaciente = new Tela4SecAtualizaPaciente(Tela3SecPaciente.this,Emf, Sec);
             secAtualizaPaciente.setResizable(false);
             secAtualizaPaciente.setVisible(true);
             setVisible(false);
-         //   dispose();
+       
             }
         });
+        
+       /*
+        *  BOTAO QUE ABRE TELA DE ATUALIZA DO PACIENTE
+        */ 
+        
+        
         botao3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             Tela4SecRemovePaciente secRemovePaci = new Tela4SecRemovePaciente(Tela3SecPaciente.this,Emf, Sec);
             secRemovePaci.setVisible(true);
             secRemovePaci.setResizable(false);
             setVisible(false);
-         //   dispose();
+        
             
             }
         });
