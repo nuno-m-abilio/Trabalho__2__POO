@@ -92,6 +92,10 @@ public class Tela5SecCadastroConsulta extends JFrame{
         JButton voltar = new javax.swing.JButton("Voltar");
         voltar.setBounds(50, 210, 120, 30);
         add(voltar);
+
+        /*
+        * BOTÃO DE VOLTAR.
+        */
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -99,6 +103,11 @@ public class Tela5SecCadastroConsulta extends JFrame{
             dispose();
             }
         });
+
+        /*
+        * BOTÃO QUE REALIZA O CADASTRO DA CONSULTA COM BASE NOS DADOS INSERIDOS
+        * NAS CAIXAS DE TEXTO, VERIFICANDO PELO CPF A PESSOA ESPECIFICA
+        */
         
         botao1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) { 
