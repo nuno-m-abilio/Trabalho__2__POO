@@ -50,6 +50,10 @@ public class Tela4MedDeclaracao  extends JFrame {
         botao1.setBounds(250, 125, 200, 20);
         add(botao1);
 
+        /*
+        * BOTÃO DE VOLTAR.
+        */ 
+
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             telaAnterior.setVisible(true);
@@ -57,6 +61,11 @@ public class Tela4MedDeclaracao  extends JFrame {
             }
         });
 
+        /*
+        * BOTÃO QUE GERA UMA DECLARAÇÃO DE ACOMPANHANTE, COM BASE NO NOME DO
+        * PACIENTE E NO NOME DO ACOMPANHANTE
+        */
+        
         botao1.addActionListener(new ActionListener() {
             public void actionPerformed (ActionEvent e) {
                 String nome1 = nome.getText();
