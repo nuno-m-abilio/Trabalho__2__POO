@@ -98,7 +98,9 @@ public class Tela4MedProntua extends JFrame {
         voltar.setBounds(60, 310, 120, 30);
         add(voltar);
 
-
+        /*
+        * BOTÃO DE VOLTAR.
+        */ 
 
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -106,6 +108,12 @@ public class Tela4MedProntua extends JFrame {
             dispose();
             }
         });
+
+        /*
+        * BOTÃO QUE GERA UM PRONTUARIO, COM BASE NOS DADOS INSERIDOS NAS CAIXAS
+        * DE TEXTOS DA INTERFACE, UTILIZANDO O CPF PARA BUSCAR O PACIENTE 
+        * ESPECIFICO 
+        */
         
         botao1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
