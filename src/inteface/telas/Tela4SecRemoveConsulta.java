@@ -63,6 +63,9 @@ public class Tela4SecRemoveConsulta extends JFrame{
         voltar.setBounds(50, 165, 120, 30);
         add(voltar);
         
+        /*
+        * BOTÃO DE VOLTAR.
+        */ 
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -71,6 +74,10 @@ public class Tela4SecRemoveConsulta extends JFrame{
             }
         });
         
+        /*
+        * BOTÃO QUE REMOVE CONSULTAS, BUSCANDO A CONSULTA A SER REMOVIDA PELO CPF
+        * DO PACIENTE, A DATA E O HORARIO DA CONSULTA.
+        */
         
         botao1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
