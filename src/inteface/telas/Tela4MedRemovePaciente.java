@@ -45,7 +45,9 @@ public class Tela4MedRemovePaciente extends JFrame{
         voltar.setBounds(60, 110, 130, 30);
         add(voltar);
         
-       
+        /*
+        * BOTÃO DE VOLTAR.
+        */ 
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -53,6 +55,11 @@ public class Tela4MedRemovePaciente extends JFrame{
             dispose();
             }
         });
+
+        /*
+        * BOTÃO QUE REMOVE O HISTORICO DO PACIENTE DE DADOS ADICIONAIS, UTILIZANDO
+        * O CPF PARA BUSCAR O PACIENTE ESPECIFICO
+        */
         
         botao1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
