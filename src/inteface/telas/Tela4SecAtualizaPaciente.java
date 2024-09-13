@@ -114,23 +114,13 @@ public class Tela4SecAtualizaPaciente extends JFrame{
         botao1.setBounds(190, 300, 100, 30 );
         add(botao1);
         
-        
-        botao1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if(jRadioButton1.isSelected()){
-                    String data1 =  jRadioButton1.getText(); // Obtém o texto do JTextField
-                    System.out.println("Data inserida: " + data1); // Exibe no console
-                }
-            }
-        });
-        
-        
-        
-        
         JButton voltar = new javax.swing.JButton("Voltar");
         voltar.setBounds(60, 300, 100, 30);
         add(voltar);
-        
+
+        /*
+        * BOTÃO DE VOLTAR.
+        */ 
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -138,6 +128,11 @@ public class Tela4SecAtualizaPaciente extends JFrame{
             dispose();
             }
         });
+
+        /*
+        * BOTÃO QUE ATUALIZA AS INFOMAÇÕES DO PACIENTE, UTILIZANDO O CPF
+        * PARA BUSCAR O PACIENTE ESPECIFICO.
+        */
         
         botao1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
