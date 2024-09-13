@@ -7,6 +7,10 @@ package inteface.telas;
 
 import javax.swing.JOptionPane;
 
+/*
+* POPUP QUE EXIBE A QUANTIDADE TOTAL DE PACIENTES ATENDIDOS
+*/
+
 public class Tela4MedTotalPacientes extends JOptionPane {
 
     public Tela4MedTotalPacientes(long numero){
