@@ -124,6 +124,10 @@ public class Tela5SecAtualizaConsulta extends JFrame {
         JButton voltar = new javax.swing.JButton("Voltar");
         voltar.setBounds(70, 340, 120, 30);
         add(voltar);
+
+        /*
+        * BOTÃO DE VOLTAR.
+        */
         
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -132,6 +136,11 @@ public class Tela5SecAtualizaConsulta extends JFrame {
             }
         });
         
+        /*
+        * BOTÃO QUE REALIZA A ATUALIZAÇÃO DE CONSULTAS, BUSCANDO A CONSULTA 
+        * PELO CPF, DATA E HORARIO E DEPOIS INSERE AS NOVAS INFORMAÇÕES DA CONSULTA
+        * A SER ATUALIZADA
+        */
         
         botao1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) { 
