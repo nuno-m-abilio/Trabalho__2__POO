@@ -4,6 +4,7 @@
  */
 package inteface.telas;
 
+import Mensageiros.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.persistence.EntityManagerFactory;
@@ -13,9 +14,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class Tela2GerenciadorMensagem  extends JFrame {
-    
-    //private javax.swing.JButton botao1;
-    
+ 
+   
     
     public Tela2GerenciadorMensagem(JFrame telaAnterior, EntityManagerFactory emf ) {
         setTitle("Gerenciador de Mensagens");
@@ -56,13 +56,21 @@ public class Tela2GerenciadorMensagem  extends JFrame {
             dispose();
             }
         });
-
+        
+        
+        MensageiroEmail mensageiroE = new MensageiroEmail();
+        MensageiroSMS mensageiroS = new MensageiroSMS();
         botao1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String data1 = data.getText(); // Obtém o texto do JTextField
-                System.out.println("Data inserida: " + data1); // Exibe no console
+                String data1 = data.getText();
+            mensageiroE.enviarMensagem(data1, emf);
+            mensageiroS.enviarMensagem(data1, emf);
+                
+            
             }
         });
+        
+       
 
       //  setVisible(true);
         

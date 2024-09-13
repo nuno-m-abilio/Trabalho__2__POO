@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Mensageiros;
+
 import AcessoSecretaria.Consulta;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -11,29 +12,20 @@ import javax.persistence.Query;
 
 public class MensageiroEmail extends Mensageiro{
 
-    public boolean enviarMensagem(String antigoCpfPaciente, String antigaData, String antigaHora, EntityManagerFactory emf) {
+    public void enviarMensagem(String data, EntityManagerFactory emf) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        Query query = em.createQuery("select c FROM Consulta c WHERE c.paciente.cpf LIKE :cpf AND c.dataa LIKE :data AND c.horario LIKE :horario");
-        query.setParameter("cpf", antigoCpfPaciente);
-        query.setParameter("data", antigaData);
-        query.setParameter("horario", antigaHora);
+        Query query = em.createQuery("select c FROM Consulta c WHERE c.dataa LIKE :data");
+        query.setParameter("data", data);
         List<Consulta> consultasEncontradas = query.getResultList();
-        if (!consultasEncontradas.isEmpty()){
-            Consulta consulta = consultasEncontradas.get(0);
+        for (Consulta c : consultasEncontradas){
             System.out.println();
             System.out.println("De: clinicamédica@gmail.com");
-            System.out.println("Para: " + consulta.getPaciente().getEmail());
-            System.out.println("Prezado senhor(a) " + consulta.getPaciente().getNome() + " sua consulta ficou agendada para o dia " + consulta.getData() + " às " + consulta.getHorario());
-            em.getTransaction().commit();
-            em.close();
-            return true;
-       }else{
-            em.getTransaction().commit();
-            em.close();
-            return false;
-        } 
-        
+            System.out.println("Para: " + c.getPaciente().getEmail());
+            System.out.println("Prezado senhor(a) " + c.getPaciente().getNome() + " sua consulta ficou agendada para o dia " + c.getData() + " às " + c.getHorario());
+        }
+        em.getTransaction().commit();
+        em.close();
     }
 
 }

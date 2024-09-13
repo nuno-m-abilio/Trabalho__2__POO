@@ -57,7 +57,7 @@ public class Tela4MedAtestado extends JFrame {
         voltar.setBounds(30, 170, 200, 20);
         add(voltar);
 
-        JButton botao1 = new JButton("Gerar");
+        JButton botao1 = new JButton("Imprimir");
         botao1.setBounds(250, 170, 200, 20);
         add(botao1);
 
@@ -73,6 +73,7 @@ public class Tela4MedAtestado extends JFrame {
                 String nome1 = nome.getText();
                 String cpf1 = cpf.getText();
                 String atestado1 = atestado.getText();
+               
                 
                med.gerarAtestado(nome1, cpf1, atestado1);
                setVisible(false);

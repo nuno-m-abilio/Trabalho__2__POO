@@ -38,8 +38,7 @@ public class Tela3SecRelato extends JFrame{
         texto1.setBounds(80, 20, 400, 30);
         add(texto1);
         
-
-        
+   
         JLabel texto3 = new javax.swing.JLabel();
         texto3.setFont(new java.awt.Font("Tahoma", 1, 15));
         texto3.setText("Colocar a data de amanhã: (Ex: 18/08/2024)");
@@ -50,9 +49,8 @@ public class Tela3SecRelato extends JFrame{
         data.setBounds(360, 67, 110, 20);
         add(data);
         
-        
         // Fazer uma acão de enviar a data de amanha quando clicar o botão
-        JButton botao1 = new javax.swing.JButton("Gerar");
+        JButton botao1 = new javax.swing.JButton("Imprimir");
         botao1.setBounds(50, 110, 400, 20);
         add(botao1);
         
@@ -68,6 +66,17 @@ public class Tela3SecRelato extends JFrame{
             dispose();
             }
         });
+        
+        botao1.addActionListener(new ActionListener() {
+            public void actionPerformed (ActionEvent e) {
+                String data1 = data.getText();
+               sec.relatorioConsultas(data1, Emf);
+               
+            }
+        });
+        
+        
+        
 
     }
       

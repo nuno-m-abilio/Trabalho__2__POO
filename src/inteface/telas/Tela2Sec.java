@@ -61,7 +61,7 @@ public class Tela2Sec extends JFrame{
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             telaAnterior.setVisible(true);
-         //   dispose();
+            dispose();
             }
         });
         

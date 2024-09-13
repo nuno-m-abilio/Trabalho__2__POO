@@ -102,7 +102,10 @@ public class Tela3MedRelatorio extends JFrame{
 
           botao4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            Tela4MedTotalPacientes medTotal = new Tela4MedTotalPacientes(Tela3MedRelatorio.this);
+            long tamanho; 
+            tamanho = med.gerarTotalClientes(Emf);
+                
+            Tela4MedTotalPacientes medTotal = new Tela4MedTotalPacientes(tamanho);
             medTotal.setVisible(true);
             
             }

@@ -64,7 +64,7 @@ public class Tela3SecPaciente extends JFrame {
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             telaAnterior.setVisible(true);
-        //    dispose();
+            dispose();
             }
         });
         

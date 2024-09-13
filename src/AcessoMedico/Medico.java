@@ -185,6 +185,8 @@ public class Medico {
         }
     }
     
+
+    
     public void gerarAtestado(String nome, String cpf, String dias){
         System.out.println("--------ATESTADO MÉDICO--------");
         System.out.println("Atesto que o(a) paciente " + nome + "portador(a) do CPF: " +  cpf); 
@@ -203,8 +205,14 @@ public class Medico {
         System.out.println("Declaro que " + acompanhante + " esteve acompanhando o(a) paciente " + paciente + " durante sua permanência na clinica Saúde & Cia.");
     }
 
-    public void gerarTotalClientes(String clientes){
-        System.out.println("--------TOTAL CLIENTES--------");
-        System.out.println("Total de clientes atendidos no mês: " + clientes);
+    public long gerarTotalClientes(EntityManagerFactory emf){
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        Query query = em.createQuery("select p FROM Paciente p");
+        List<Paciente> pacientesEncontrados = query.getResultList();
+        long total = pacientesEncontrados.size();
+        em.getTransaction().commit();
+        em.close();
+        return total;
     }
 }

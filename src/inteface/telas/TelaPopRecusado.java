@@ -4,13 +4,17 @@
  */
 package inteface.telas;
 
-
 import javax.swing.JOptionPane;
 
-public class Tela4MedTotalPacientes extends JOptionPane {
-
-    public Tela4MedTotalPacientes(long numero){
+/**
+ *
+ * @author JG
+ */
+public class TelaPopRecusado {
+    
+    public TelaPopRecusado(){
+        JOptionPane.showMessageDialog(null, "Não Enviado","", JOptionPane.ERROR_MESSAGE);
         
-        JOptionPane.showMessageDialog(null, "Total de Pacientes: "+ numero );
     }
 }
+

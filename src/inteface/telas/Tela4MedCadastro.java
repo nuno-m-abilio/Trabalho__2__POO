@@ -142,7 +142,7 @@ public class Tela4MedCadastro extends JFrame {
                 System.out.println(fuma1);
                 System.out.println(bebe1);
                 System.out.println(colesterol1);
-                
+               
                 
                 
                 med.insereHistorico( cpf1, fuma1, bebe1, colesterol1, diabetes1, doencaCardiaca1, cirurgias1, alergias1, emf);
