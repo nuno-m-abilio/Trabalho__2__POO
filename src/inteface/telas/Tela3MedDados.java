@@ -64,7 +64,8 @@ public class Tela3MedDados extends JFrame {
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             telaAnterior.setVisible(true);
-            dispose();
+             dispose();
+           
             }
         });
         
@@ -75,7 +76,8 @@ public class Tela3MedDados extends JFrame {
             Tela4MedCadastro medDados = new Tela4MedCadastro(Tela3MedDados.this, Emf, Med);
             medDados.setVisible(true);
             medDados.setResizable(false);
-            dispose();
+            setVisible(false);
+           // dispose();
             
             }
         });
@@ -84,7 +86,8 @@ public class Tela3MedDados extends JFrame {
             Tela4MedAtualizaDados medAtualizaDados = new Tela4MedAtualizaDados(Tela3MedDados.this, Emf, Med);
             medAtualizaDados.setVisible(true);
             medAtualizaDados.setResizable(false);
-            dispose();
+            setVisible(false);
+           // dispose();
             }
         });
         botao3.addActionListener(new ActionListener() {
@@ -92,7 +95,8 @@ public class Tela3MedDados extends JFrame {
             Tela4MedRemovePaciente medRemovePaciente = new Tela4MedRemovePaciente(Tela3MedDados.this, Emf, Med);
             medRemovePaciente.setVisible(true);
             medRemovePaciente.setResizable(false);
-            dispose();
+            setVisible(false);
+          //  dispose();
             }
         });
             

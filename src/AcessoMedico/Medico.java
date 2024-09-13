@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package AcessoMedico;
+
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -80,14 +81,35 @@ public class Medico {
         }
     }
     
+    public boolean imprimirHistorico(String cpfPaciente, EntityManagerFactory emf){
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        Query query = em.createQuery("select p FROM Paciente p WHERE p.cpf LIKE :cpf");
+        query.setParameter("cpf", cpfPaciente);
+        List<Paciente> pacientesEncontrados = query.getResultList();
+        if (!pacientesEncontrados.isEmpty()){
+            Historico historico = pacientesEncontrados.get(0).getHistorico();
+            if (historico != null){
+                System.out.println(historico.getBebe() + historico.getCirurgias());
+            }
+            em.getTransaction().commit();
+            em.close();
+            return true;
+        }else{
+            em.getTransaction().commit();
+            em.close();
+            return false;
+        }
+    }
+    
     public boolean inserirProntuario(String cpfPaciente, String protocolo, String sintomas, String diagnostico, String prescricaoTratamento, String medico, EntityManagerFactory emf){
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         Query query = em.createQuery("select p FROM Paciente p WHERE p.cpf LIKE :cpf");
         query.setParameter("cpf", cpfPaciente);
-        List<Paciente> consultasEncontradas = query.getResultList();
-        if (!consultasEncontradas.isEmpty()){
-            Prontuario prontuario = new Prontuario(consultasEncontradas.get(0), protocolo, sintomas, diagnostico, prescricaoTratamento, medico);
+        List<Paciente>pacientesEncontrados = query.getResultList();
+        if (!pacientesEncontrados.isEmpty()){
+            Prontuario prontuario = new Prontuario(pacientesEncontrados.get(0), protocolo, sintomas, diagnostico, prescricaoTratamento, medico);
             em.persist(prontuario);
             em.getTransaction().commit();
             em.close();
@@ -105,9 +127,9 @@ public class Medico {
         Query query = em.createQuery("select p FROM Prontuario p WHERE p.paciente.cpf LIKE :cpf AND p.protocolo LIKE :protocolo");
         query.setParameter("cpf", cpfPaciente);
         query.setParameter("protocolo", protocolo);
-        List<Prontuario> consultasEncontradas = query.getResultList();
-        if (!consultasEncontradas.isEmpty()){
-            Prontuario prontuario = consultasEncontradas.get(0);
+        List<Prontuario> prontuariosEncontrados = query.getResultList();
+        if (!prontuariosEncontrados.isEmpty()){
+            Prontuario prontuario = prontuariosEncontrados.get(0);
             prontuario.setSintomas(sintomas);
             prontuario.setDiagnostico(diagnostico);
             prontuario.setPrescricaoTratamento(prescricaoTratamento);
@@ -130,9 +152,29 @@ public class Medico {
         Query query = em.createQuery("select p FROM Prontuario p WHERE p.paciente.cpf LIKE :cpf AND p.protocolo LIKE :protocolo");
         query.setParameter("cpf", cpfPaciente);
         query.setParameter("protocolo", protocolo);
-        List<Prontuario> consultasEncontradas = query.getResultList();
-        if (!consultasEncontradas.isEmpty()){
-            em.remove(consultasEncontradas.get(0));
+        List<Prontuario> prontuariosEncontrados = query.getResultList();
+        if (!prontuariosEncontrados.isEmpty()){
+            em.remove(prontuariosEncontrados.get(0));
+            em.getTransaction().commit();
+            em.close();
+            return true;
+        }else{
+            em.getTransaction().commit();
+            em.close();
+            return false;
+        }
+    }
+    
+    public boolean imprimirProntuario(String cpfPaciente, String protocolo, EntityManagerFactory emf){
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        Query query = em.createQuery("select p FROM Prontuario p WHERE p.paciente.cpf LIKE :cpf AND p.protocolo LIKE :protocolo");
+        query.setParameter("cpf", cpfPaciente);
+        query.setParameter("protocolo", protocolo);
+        List<Prontuario> prontuariosEncontrados = query.getResultList();
+        if (!prontuariosEncontrados.isEmpty()){
+            Prontuario prontuario = prontuariosEncontrados.get(0); 
+            System.out.println(prontuario.getMedico());
             em.getTransaction().commit();
             em.close();
             return true;

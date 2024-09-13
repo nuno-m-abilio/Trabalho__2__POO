@@ -64,7 +64,7 @@ public class Tela3SecPaciente extends JFrame {
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             telaAnterior.setVisible(true);
-            dispose();
+        //    dispose();
             }
         });
         
@@ -74,7 +74,8 @@ public class Tela3SecPaciente extends JFrame {
             Tela4SecCadastro secCadastro = new Tela4SecCadastro(Tela3SecPaciente.this,Emf, Sec);
             secCadastro.setVisible(true);
             secCadastro.setResizable(false);
-            dispose();
+            setVisible(false);
+        //    dispose();
             
             }
         });
@@ -83,7 +84,8 @@ public class Tela3SecPaciente extends JFrame {
             Tela4SecAtualizaPaciente secAtualizaPaciente = new Tela4SecAtualizaPaciente(Tela3SecPaciente.this,Emf, Sec);
             secAtualizaPaciente.setResizable(false);
             secAtualizaPaciente.setVisible(true);
-            dispose();
+            setVisible(false);
+         //   dispose();
             }
         });
         botao3.addActionListener(new ActionListener() {
@@ -91,7 +93,8 @@ public class Tela3SecPaciente extends JFrame {
             Tela4SecRemovePaciente secRemovePaci = new Tela4SecRemovePaciente(Tela3SecPaciente.this,Emf, Sec);
             secRemovePaci.setVisible(true);
             secRemovePaci.setResizable(false);
-            dispose();
+            setVisible(false);
+         //   dispose();
             
             }
         });

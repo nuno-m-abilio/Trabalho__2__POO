@@ -57,8 +57,7 @@ public class Tela4SecRemoveConsulta extends JFrame{
         JButton botao1 = new javax.swing.JButton("Remover");
         botao1.setBounds(180, 165, 120, 30);
         add(botao1);
-        
-        
+         
         
         JButton voltar = new javax.swing.JButton("Voltar");
         voltar.setBounds(50, 165, 120, 30);

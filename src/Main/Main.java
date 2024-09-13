@@ -17,11 +17,13 @@ public class Main {
     
     public static void main(String[] args) {
         
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("asda");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PU");
         Medico medico = new Medico();
         Secretaria secretaria = new Secretaria();
         Tela1 tela1 = new Tela1(emf,medico,secretaria);
         
+        
+
     }
 }
 

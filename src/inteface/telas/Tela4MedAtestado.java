@@ -75,6 +75,7 @@ public class Tela4MedAtestado extends JFrame {
                 String atestado1 = atestado.getText();
                 
                med.gerarAtestado(nome1, cpf1, atestado1);
+               setVisible(false);
             }
         });
 

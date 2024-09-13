@@ -5,13 +5,13 @@
 package AcessoMedico;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 /**
  *
@@ -24,18 +24,26 @@ public class Prontuario{
     private long id;
     @OneToOne(cascade = CascadeType.ALL)
     private Paciente paciente;
-    @Column(length = 500, nullable = false, name = "PROTOCOLO")
+    @Column(name = "PROTOCOLO")
     private String protocolo;
-    @Column(length = 300, nullable = false, name = "SINTOMAS")
+    @Column(name = "SINTOMAS")
     private String sintomas;
-    @Column(length = 500, nullable = false, name = "DIAGNOSTICO")
+    @Column(name = "DIAGNOSTICO")
     private String diagnostico;
-    @Column(length = 500, nullable = false, name = "PRESCRICAOTRATAMENTO")
+    @Column(name = "PRESCRICAOTRATAMENTO")
     private String prescricaoTratamento;
-    @Column(length = 100, nullable = false, name = "MEDICO")
+    @Column(name = "MEDICO")
     private String medico;
     
-    public Prontuario(){}
+    public Prontuario(){
+        String  a = "";
+        this.paciente = new Paciente();
+        this.protocolo = a;
+        this.sintomas = a;
+        this.diagnostico = a;
+        this.prescricaoTratamento = a;
+        this.medico = a;
+    }
     
     public Prontuario(Paciente paciente, String protocolo, String sintomas, String diagnostico, String prescricaoTratamento, String medico) {
         this.paciente = paciente;

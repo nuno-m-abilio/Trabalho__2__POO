@@ -61,7 +61,7 @@ public class Tela2Sec extends JFrame{
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             telaAnterior.setVisible(true);
-            dispose();
+         //   dispose();
             }
         });
         
@@ -71,7 +71,8 @@ public class Tela2Sec extends JFrame{
             Tela3SecPaciente telamedDados = new Tela3SecPaciente(Tela2Sec.this,Emf, Sec);
             telamedDados.setVisible(true);
             telamedDados.setResizable(false);
-            dispose();
+            setVisible(false);
+          //  dispose();
             
             }
         });
@@ -80,7 +81,8 @@ public class Tela2Sec extends JFrame{
             Tela3SecConsulta telaSecConsu = new Tela3SecConsulta(Tela2Sec.this,Emf, Sec);
             telaSecConsu.setVisible(true);
             telaSecConsu.setResizable(false);
-            dispose();
+            setVisible(false);
+         //   dispose();
             }
         });
         botao3.addActionListener(new ActionListener() {
@@ -88,7 +90,8 @@ public class Tela2Sec extends JFrame{
             Tela3SecRelato telaSedRelato= new Tela3SecRelato(Tela2Sec.this,Emf, Sec);
             telaSedRelato.setVisible(true);
             telaSedRelato.setResizable(false);
-            dispose();
+            setVisible(false);
+         //   dispose();
             }
         });
     }

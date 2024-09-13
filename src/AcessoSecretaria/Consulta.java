@@ -6,13 +6,13 @@ package AcessoSecretaria;
 
 import AcessoMedico.Paciente;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 /**
  *
  * @author 55449
@@ -22,21 +22,28 @@ import javax.persistence.OneToOne;
 public class Consulta {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Column(length = 10, nullable = false, name = "DATACONSULTA")
-    private String data;
-    @Column(length = 5, nullable = false, name = "HORARIO")
+    @Column(name = "DATAA")
+    private String dataa;
+    @Column(name = "HORARIO")
     private String horario;
-    @Column(length = 100, nullable = false, name = "MEDICO")
+    @Column(name = "MEDICO")
     private String medico;
     @OneToOne(cascade = CascadeType.ALL)
     private Paciente paciente;
-    @Column(length = 50, nullable = false, name = "TIPO")
+    @Column(name = "TIPO")
     private String tipo;
     
-    protected Consulta(){}
+    protected Consulta(){
+    String a = "";
+        this.dataa = a;
+        this.horario = a;
+        this.medico = a;
+        this.paciente = new Paciente();
+        this.tipo = a;
+    }
     
     protected Consulta(String data, String horario, String medico, Paciente paciente, String tipo) {
-        this.data = data;
+        this.dataa = data;
         this.horario = horario;
         this.medico = medico;
         this.paciente = paciente;
@@ -48,11 +55,11 @@ public class Consulta {
     }
     
     public String getData() {
-        return data;
+        return dataa;
     }
 
     protected void setData(String data) {
-        this.data = data;
+        this.dataa = data;
     }
 
     public String getHorario() {

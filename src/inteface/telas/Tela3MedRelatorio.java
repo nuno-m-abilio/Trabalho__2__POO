@@ -86,6 +86,7 @@ public class Tela3MedRelatorio extends JFrame{
             Tela4MedAtestado medAtestado = new Tela4MedAtestado(Tela3MedRelatorio.this, Emf, Med);
             medAtestado.setVisible(true);
             medAtestado.setResizable(false);
+            setVisible(false);
             //dispose();
             }
         });
@@ -94,6 +95,7 @@ public class Tela3MedRelatorio extends JFrame{
             Tela4MedDeclaracao medDeclaracao = new Tela4MedDeclaracao(Tela3MedRelatorio.this,Emf, Med);
             medDeclaracao.setVisible(true);
             medDeclaracao.setResizable(false);
+            setVisible(false);
            // dispose();
             }
         });
@@ -102,6 +104,7 @@ public class Tela3MedRelatorio extends JFrame{
             public void actionPerformed(ActionEvent e) {
             Tela4MedTotalPacientes medTotal = new Tela4MedTotalPacientes(Tela3MedRelatorio.this);
             medTotal.setVisible(true);
+            
             }
         });
     }

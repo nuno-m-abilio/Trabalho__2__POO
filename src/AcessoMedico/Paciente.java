@@ -4,16 +4,14 @@
  */
 package AcessoMedico;
 
-import java.util.ArrayList;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Column;
 import javax.persistence.OneToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Table;
 /**
  *
  * @author 55449
@@ -24,24 +22,34 @@ import javax.persistence.GenerationType;
 public class Paciente {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Column(length = 100, nullable = false, name = "NOME")
+    @Column(name = "NOME")
     private String nome;
-    @Column(length = 14, nullable = false, name = "CPF")
+    @Column(name = "CPF")
     private String cpf;
-    @Column(length = 10, nullable = false, name = "DATANASCIMENTO")
+    @Column(name = "DATANASCIMENTO")
     private String dataNascimento;
-    @Column(length = 200, nullable = false, name = "ENDEREÇO")
+    @Column(name = "ENDERECO")
     private String endereco;
-    @Column(length = 20, nullable = false, name = "CELULAR")
+    @Column(name = "CELULAR")
     private String celular;
-    @Column(length = 100, nullable = false, name = "EMAIL")
+    @Column(name = "EMAIL")
     private String email;
-    @Column(length = 14, nullable = false, name = "TIPOCONVENIO")
+    @Column(name = "TIPOCONVENIO")
     private String tipoConvenio;
     @OneToOne(cascade = CascadeType.ALL)
     private Historico historico;
     
-    public Paciente(){}
+    public Paciente(){
+        String a = "";
+        this.nome = a;
+        this.cpf = a;
+        this.dataNascimento = a;
+        this.endereco = a;
+        this.celular = a;
+        this.email = a;
+        this.tipoConvenio = a;
+        this.historico = new Historico();
+    }
     
     public Paciente(String nome, String cpf, String dataNascimento, String endereco, String celular, String email, String tipoConvenio) {
         this.nome = nome;

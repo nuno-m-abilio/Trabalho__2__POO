@@ -58,7 +58,7 @@ public class Tela1 extends JFrame {
             Tela2Med telaMed = new Tela2Med(Tela1.this, Emf, Med);
             telaMed.setVisible(true);
             telaMed.setResizable(false);
-            dispose();
+            setVisible(false);
 
             }
         });
@@ -67,7 +67,7 @@ public class Tela1 extends JFrame {
             Tela2Sec telaSec = new Tela2Sec(Tela1.this, Emf, Sec);
             telaSec.setVisible(true);
             telaSec.setResizable(false);
-            dispose();
+            setVisible(false);
           
             }
         });
@@ -76,7 +76,7 @@ public class Tela1 extends JFrame {
             Tela2GerenciadorMensagem gerenciadorMensagem = new Tela2GerenciadorMensagem(Tela1.this, Emf);
             gerenciadorMensagem.setVisible(true);
             gerenciadorMensagem.setResizable(false);
-            dispose();
+            setVisible(false);
             }
         });
         

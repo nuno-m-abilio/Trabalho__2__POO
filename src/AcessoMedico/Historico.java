@@ -3,12 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package AcessoMedico;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Table;
 /**
  *
  * @author 55449
@@ -18,17 +19,26 @@ import javax.persistence.GenerationType;
 public class Historico {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    @Column(name = "FUMA")
     private boolean fuma;
+    @Column(name = "BEBE")
     private boolean bebe;
+    @Column(name = "COLESTEROL")
     private boolean colesterol;
+    @Column(name = "DIABETES")
     private boolean diabetes;
+    @Column(name = "DOENCACARDIACA")
     private boolean doencaCardiaca;
-    @Column(length = 300, nullable = false, name = "CIRURGIAS")
+    @Column(name = "CIRURGIAS")
     private String cirurgias;
-    @Column(length = 300, nullable = false, name = "ALERGIAS")
+    @Column(name = "ALERGIAS")
     private String alergias;
     
-    protected Historico(){}
+    protected Historico(){
+        String a = "";
+        this.cirurgias = a;
+        this.alergias = a;
+    }
     
     protected Historico(boolean fuma, boolean bebe, boolean colesterol, boolean diabetes, boolean doencaCardiaca, String cirurgias, String alergias) {
         this.fuma = fuma;

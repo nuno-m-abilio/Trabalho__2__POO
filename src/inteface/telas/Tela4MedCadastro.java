@@ -93,7 +93,7 @@ public class Tela4MedCadastro extends JFrame {
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             telaAnterior.setVisible(true);
-            dispose();
+             dispose();
             }
         });
         
@@ -138,7 +138,10 @@ public class Tela4MedCadastro extends JFrame {
                 String cirurgias1 = cirurgias.getText();
                 String alergias1 = alergias.getText();
                 // Sem registro
-                
+                System.out.println(cpf1);
+                System.out.println(fuma1);
+                System.out.println(bebe1);
+                System.out.println(colesterol1);
                 
                 
                 

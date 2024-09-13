@@ -57,7 +57,7 @@ public class Tela2Med extends JFrame {
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             telaAnterior.setVisible(true);
-            dispose();
+           // dispose();
             }
         });
         
@@ -69,7 +69,7 @@ public class Tela2Med extends JFrame {
             Tela3MedDados telamedDados = new Tela3MedDados(Tela2Med.this, Emf, Med);
             telamedDados.setVisible(true);
             telamedDados.setResizable(false);
-            dispose();
+         //   dispose();
 
             }
         });
@@ -78,7 +78,8 @@ public class Tela2Med extends JFrame {
             Tela3MedProntuario telaMedPront = new Tela3MedProntuario(Tela2Med.this, Emf, Med);
             telaMedPront.setVisible(true);
             telaMedPront.setResizable(false);
-            dispose();
+            setVisible(false);
+          //  dispose();
             
             }
         });
@@ -87,7 +88,7 @@ public class Tela2Med extends JFrame {
             Tela3MedRelatorio telaMedRelato= new Tela3MedRelatorio(Tela2Med.this, Emf, Med);
             telaMedRelato.setVisible(true);
             telaMedRelato.setResizable(false);
-            dispose();
+           // dispose();
         
             }
         });

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package AcessoSecretaria;
+
 import AcessoMedico.Paciente;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -73,7 +74,7 @@ public class Secretaria {
     public boolean atualizarConsulta(String antigoCpfPaciente, String antigaData, String antigoHorario, String data, String horario, String medico, String cpfPaciente, String tipo, EntityManagerFactory emf){
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        Query query = em.createQuery("select c FROM Consulta c WHERE c.paciente.cpf LIKE :cpf AND c.data LIKE :data AND c.horario LIKE :horario");
+        Query query = em.createQuery("select c FROM Consulta c WHERE c.paciente.cpf LIKE :cpf AND c.dataa LIKE :data AND c.horario LIKE :horario");
         query.setParameter("cpf", antigoCpfPaciente);
         query.setParameter("data", antigaData);
         query.setParameter("horario", antigoHorario);
@@ -121,7 +122,7 @@ public class Secretaria {
     public boolean removerConsulta(String antigoCpfPaciente, String antigaData, String antigaHora, EntityManagerFactory emf){
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        Query query = em.createQuery("select c FROM Consulta c WHERE c.paciente.cpf LIKE :cpf AND c.data LIKE :data AND c.horario LIKE :horario");
+        Query query = em.createQuery("select c FROM Consulta c WHERE c.paciente.cpf LIKE :cpf AND c.dataa LIKE :data AND c.horario LIKE :horario");
         query.setParameter("cpf", antigoCpfPaciente);
         query.setParameter("data", antigaData);
         query.setParameter("horario", antigaHora);
@@ -135,14 +136,54 @@ public class Secretaria {
             em.getTransaction().commit();
             em.close();
             return false;
-        }   
+        }
     }
     
+    public boolean imprimePaciente(String cpfPaciente, EntityManagerFactory emf){
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        Query query = em.createQuery("select p FROM Paciente p WHERE p.cpf LIKE :cpf");
+        query.setParameter("cpf", cpfPaciente);
+        List<Paciente> pacientesEncontrados = query.getResultList();
+        if (!pacientesEncontrados.isEmpty()){
+            Paciente pa = pacientesEncontrados.get(0);
+            System.out.println(pa.getNome() + pa.getCpf() + pa.getCelular() + pa.getDataNascimento());
+            em.getTransaction().commit();
+            em.close();
+            return true;
+        }else{
+            em.getTransaction().commit();
+            em.close();
+            return false;
+        }
+    }
+    
+     public boolean imprimeConsulta(String antigoCpfPaciente, String antigaData, String antigaHora, EntityManagerFactory emf){
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        Query query = em.createQuery("select c FROM Consulta c WHERE c.paciente.cpf LIKE :cpf AND c.dataa LIKE :data AND c.horario LIKE :horario");
+        query.setParameter("cpf", antigoCpfPaciente);
+        query.setParameter("data", antigaData);
+        query.setParameter("horario", antigaHora);
+        List<Consulta> consultasEncontradas = query.getResultList();
+        if (!consultasEncontradas.isEmpty()){
+            Consulta co = consultasEncontradas.get(0);
+            System.out.println(co.getData() + co.getHorario() + co.getMedico() + co.getPaciente().getNome());
+            em.getTransaction().commit();
+            em.close();
+            return true;
+       }else{
+            em.getTransaction().commit();
+            em.close();
+            return false;
+        }
+    }
+            
     public void relatorioConsultas(String data, EntityManagerFactory emf){
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         try{
-            String jpql = "SELECT consulta FROM Consulta consulta WHERE consulta.data = :data";
+            String jpql = "SELECT consulta FROM Consulta consulta WHERE consulta.dataa = :data";
             TypedQuery<Consulta> query = em.createQuery(jpql, Consulta.class);
             query.setParameter("data", data);
             List<Consulta> consultasDoDia = query.getResultList();
@@ -178,4 +219,3 @@ public class Secretaria {
         }
     }
 }
-

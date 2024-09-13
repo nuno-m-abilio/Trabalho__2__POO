@@ -65,7 +65,7 @@ public class Tela3MedProntuario extends JFrame{
         voltar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             telaAnterior.setVisible(true);
-            dispose();
+         //   dispose();
             }
         });
         
@@ -74,7 +74,8 @@ public class Tela3MedProntuario extends JFrame{
             Tela4MedProntua medProntuario = new Tela4MedProntua(Tela3MedProntuario.this, Emf, Med);
             medProntuario.setVisible(true);
             medProntuario.setResizable(false);
-            dispose();
+            setVisible(false);
+          //  dispose();
             
             }
         });
@@ -83,7 +84,8 @@ public class Tela3MedProntuario extends JFrame{
             Tela4MedAtualizaProntua medProntuarioAtualiza = new Tela4MedAtualizaProntua(Tela3MedProntuario.this, Emf, Med);
             medProntuarioAtualiza.setVisible(true);
             medProntuarioAtualiza.setResizable(false);
-            dispose();
+            setVisible(false);
+           // dispose();
             }
         });
         botao3.addActionListener(new ActionListener() {
@@ -91,7 +93,8 @@ public class Tela3MedProntuario extends JFrame{
             Tela4MedRemoveProntuario medProntuarioRemove = new Tela4MedRemoveProntuario(Tela3MedProntuario.this, Emf, Med);
             medProntuarioRemove.setVisible(true);
             medProntuarioRemove.setResizable(false);
-            dispose();
+            setVisible(false);
+           // dispose();
             }
         });
        

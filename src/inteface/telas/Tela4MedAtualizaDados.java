@@ -148,7 +148,7 @@ public class Tela4MedAtualizaDados extends JFrame {
                 // Sem registro
                 
                 
-                
+
                 med.atualizaHistorico(cpf1, fuma1, bebe1, colesterol1, diabetes1, doencaCardiaca1, cirurgias1, alergias1, emf);
             }
         });
